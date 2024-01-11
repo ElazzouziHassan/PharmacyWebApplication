@@ -4,5 +4,5 @@ Bienvenue sur le projet de Pharmacie en Ligne pour la région d'El Jadida. Cette
 
 
 ## **UI DESIGN** :
-- Link 1 : [UI DESIGN PDF VERSION](public-ressources\UI-Design\pharmacyApp.pdf)
+- Link 1 : [UI DESIGN PDF VERSION](https://github.com/ElazzouziHassan/PharmacyWebApplication/blob/main/public-ressources/UI-Design/pharmacyApp.pdf)
 - Link 2 : [PROTOTYPE FIGMA VERSION](https://www.figma.com/file/lrLb8IcvMNKyA6K3smnJj4/pharmacyApp?type=design&node-id=7%3A199&mode=design&t=1zxdGuwUFZnNk3C8-1)
