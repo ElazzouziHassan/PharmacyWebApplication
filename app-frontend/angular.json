@@ -30,13 +30,30 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./src/assets/css/style.css"
             ],
             "scripts": [
+<<<<<<< HEAD
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
 
+=======
+              "./src/assets/js/new/jquery.min.js",
+              "./src/assets/js/new/bootstrap.min.js",
+              "./src/assets/js/new/jquery.zoom.min.js",
+              "./src/assets/js/new/nouislider.min.js",
+              "./src/assets/js/new/slick.min.js",
+              "./src/assets/js/mm.js",
+              "./src/assets/js/jquery-3.3.1.min.js",
+              "./src/assets/js/jquery-ui.min.js",
+              "./src/assets/js/jquery.slicknav.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./src/assets/js/bootstrap.min.js"
+              
+            
+>>>>>>> cd1d9feb74fdcde76e65549d73bcca7893ee071c
             ]
           },
           "configurations": {
@@ -95,7 +112,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
+             
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [

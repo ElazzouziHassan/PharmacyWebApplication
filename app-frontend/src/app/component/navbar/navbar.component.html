@@ -1,39 +1,4 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav> -->
+
 
   <header class="header">
     <div class="header__top">
@@ -50,19 +15,19 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__right">
                         <div class="header__top__right__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab  fa-pinterest-p"></i></a>
                         </div>
                         <div class="header__top__right__language">
-                            <img src="img/language.png" alt="">
+                            <!-- <img src="img/language.png" alt="">
                             <div>English</div>
-                            <span class="arrow_carrot-down"></span>
-                            <ul>
+                            <span class="arrow_carrot-down"></span> -->
+                          <!--   <ul>
                                 <li><a href="#">Spanis</a></li>
                                 <li><a href="#">English</a></li>
-                            </ul>
+                            </ul> -->
                         </div>
                         <div class="header__top__right__auth">
                             <a href="#"><i class="fa fa-user"></i> Login</a>
@@ -76,32 +41,32 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    <a routerLink="/home"><img src="../../../assets/images/Screen Shot 2024-01-13 at 15.20.40.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./shop-grid.html">Shop</a></li>
-                        <li><a href="#">Pages</a>
+                        <li ><a routerLinkActive="active" routerLink="/home">Home</a></li>
+                        <li><a routerLinkActive="active" routerLink="/shop">Shop</a></li>
+                        <li><a routerLinkActive="active" >Pages</a>
                             <ul class="header__menu__dropdown">
-                                <li><a href="./shop-details.html">Shop Details</a></li>
-                                <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                <li><a href="./checkout.html">Check Out</a></li>
-                                <li><a href="./blog-details.html">Blog Details</a></li>
+                                <li><a >Shop Details</a></li>
+                                <li><a >Shoping Cart</a></li>
+                                <li><a >Check Out</a></li>
+                                <li><a >Blog Details</a></li>
                             </ul>
                         </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a routerLink="/blog">Blog</a></li>
+                        <li><a routerLink="/contact-us" >Contact</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a routerLink=""><i class="fa fa-heart"></i> <span>1</span></a></li>
+                        <li><a routerLink=""><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                     </ul>
                     <div class="header__cart__price">item: <span>$1500.00</span></div>
                 </div>
@@ -121,18 +86,18 @@
                         <i class="fa fa-bars"></i>
                         <span>All departments</span>
                     </div>
-                    <ul>
-                        <li><a href="#">Fresh Meat</a></li>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Fruit &amp; Nut Gifts</a></li>
-                        <li><a href="#">Fresh Berries</a></li>
-                        <li><a href="#">Ocean Foods</a></li>
-                        <li><a href="#">Butter &amp; Eggs</a></li>
-                        <li><a href="#">Fastfood</a></li>
-                        <li><a href="#">Fresh Onion</a></li>
-                        <li><a href="#">Papayaya &amp; Crisps</a></li>
-                        <li><a href="#">Oatmeal</a></li>
-                        <li><a href="#">Fresh Bananas</a></li>
+                    <ul class="dropdown-content ">
+                        <li><a routerLink="" routerLinkActive="active">Fresh Meat</a></li>
+                        <li><a routerLink="" routerLinkActive="active">Vegetables</a></li>
+                        <li><a routerLink="" routerLinkActive="active">Fruit &amp; Nut Gifts</a></li>
+                        <li><a routerLink="" routerLinkActive="active">Fresh Berries</a></li>
+                        <li><a routerLink="" routerLinkActive="active">Ocean Foods</a></li>
+                        <li><a routerLink="" routerLinkActive="active">Butter &amp; Eggs</a></li>
+                        <li><a routerLink="" routerLinkActive="active">Fastfood</a></li>
+                        <li><a routerLink="" routerLinkActive="active">Fresh Onion</a></li>
+                        <li><a routerLink="" routerLinkActive="active">Papayaya &amp; Crisps</a></li>
+                        <li><a routerLink="" routerLinkActive="active">Oatmeal</a></li>
+                        <li><a routerLink="" routerLinkActive="active">Fresh Bananas</a></li>
                     </ul>
                 </div>
             </div>
