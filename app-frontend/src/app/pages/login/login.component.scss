@@ -1,0 +1,19 @@
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f7f2ea;
+}
+
+.link-register{
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.page-login{
+  border: 1px solid #090150; /* Couleur et style de bordure de votre choix */
+  border-radius: 5px; /* Facultatif : pour arrondir les coins */
+  overflow: hidden;
+  background-color: #ece4d5;
+}
