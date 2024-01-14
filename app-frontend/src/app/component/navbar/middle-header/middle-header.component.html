@@ -1,0 +1,40 @@
+<div class="container" style="">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="header__logo">
+                <a routerLink="/home"><img src="../../../assets/images/Screen Shot 2024-01-13 at 15.20.40.png" alt=""></a>
+            </div>
+        </div>
+        <div class="col-lg-6" style="display: flex;align-items: center; width: fit-content;">
+            <nav class="header__menu" 
+            style=" display: flex;align-items: center;">
+                <ul>
+                    <li ><a routerLinkActive="active" routerLink="/home">Home</a></li>
+                    <li><a routerLinkActive="active" routerLink="/shop">Shop</a></li>
+                    <li><a routerLinkActive="active" >Pages</a>
+                        <ul class="header__menu__dropdown">
+                            <li><a routerLink="/shopdetails">Shop Details</a></li>
+                            <li><a routerLink="/shopingcart">Shoping Cart</a></li>
+                            <li><a routerLink="checkout/">Check Out</a></li>
+                            <li><a routerLink="/blogdetails">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li><a routerLink="/blog">Blog</a></li>
+                    <li><a routerLink="/contact-us" >Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-lg-3" style=" display: flex;align-items: center;justify-content: end;">
+            <div class="header__cart">
+                <ul>
+                    <li><a routerLink=""><i class="fa fa-heart"></i> <span>1</span></a></li>
+                    <li><a routerLink=""><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                </ul>
+                <div class="header__cart__price">item: <span>$1500.00</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="humberger__open">
+        <i class="fa fa-bars"></i>
+    </div>
+</div>
