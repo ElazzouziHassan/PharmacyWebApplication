@@ -34,13 +34,13 @@
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./src/assets/css/style.css"
+
             ],
             "scripts": [
               "./src/assets/js/new/jquery.min.js",
               "./src/assets/js/new/bootstrap.min.js",
               "./src/assets/js/new/jquery.zoom.min.js",
               "./src/assets/js/new/nouislider.min.js",
-              "./src/assets/js/new/slick.min.js",
               "./src/assets/js/mm.js",
               "./src/assets/js/jquery-3.3.1.min.js",
               "./src/assets/js/jquery-ui.min.js",
