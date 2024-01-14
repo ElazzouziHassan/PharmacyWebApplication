@@ -9,6 +9,7 @@ import { ShopingCartComponent } from './pages/shoping-cart/shoping-cart.componen
 import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { BlogdetailsComponent } from './pages/blogdetails/blogdetails.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 
 
 
@@ -16,7 +17,6 @@ export const routes: Routes = [
 
     {path:'contact-us',component:ContactusComponent},
     {path:"login", component:LoginComponent},
-    {path:'',component:HomeComponent},
     {path:'contact-us',component:ContactusComponent},
     {path:'home',component:HomeComponent},
     {path:'shop',component:ShopComponent},
@@ -26,7 +26,9 @@ export const routes: Routes = [
     {path:'checkout',component:CheckOutComponent},
     {path:'blogdetails',component:BlogdetailsComponent},
     {path:'signup',component:SignupComponent},
-    // {path:'login',component:LoginComponent},
+    {path:'login',component:LoginComponent},
+    {path:'',component:HomeComponent},
+    {path:'**',component:PagenotfoundComponent},
 
 ];
 
