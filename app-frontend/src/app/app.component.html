@@ -1,5 +1,22 @@
+<style>
+    .mainContainer{
+        display: flex;
+        justify-content: space-around;
+    }
+</style>
 
 <navbar></navbar>
-<router-outlet></router-outlet>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3">
+           <leftasideallcategories></leftasideallcategories>
+        </div>
+        <div class="col-lg-9 col-md-9">
+            <searchallcategories></searchallcategories>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    
+</div>
 <app-footer></app-footer>
 
