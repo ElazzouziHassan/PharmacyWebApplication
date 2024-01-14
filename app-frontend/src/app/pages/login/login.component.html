@@ -2,23 +2,23 @@
   <div class="row page-login border-content">
     <div class="col-lg-6 p-0 col-12 ">
       <div class="d-flex align-items-center justify-content-center h-100">
-        <form class="">
+        <form class="" #myForm="ngForm" (ngSubmit)="onSubmit()">
           <h2 class="text-center mb-4">Bienvenue !</h2>
           <div class="form-group col-12"> <!-- Ajoutez col-12 ici -->
             <p>Connectez-vous à votre compte</p>
-            <input type="email" class="form-control" id="email" placeholder="Email">
+            <input type="email" name="username" [(ngModel)]="user.username"  class="form-control" id="email" placeholder="Email">
           </div>
           <div class="form-group my-4 col-12"> <!-- Ajoutez col-12 ici -->
-            <input type="password" autocomplete class="form-control" id="password" placeholder="Mot de passe">
+            <input type="password" name="password" [(ngModel)]="user.password" autocomplete="true" class="form-control" id="password" placeholder="Mot de passe">
           </div>
           <div class="d-grid gap-2 col-12">
-            <button type="button" (click)="addedToCart();" class="btn btn-primary btn-block">Login</button>
+            <button type="submit"  class="btn btn-primary btn-block">Login</button>
           </div>
           <div class="my-4 col-12 text-center">
             <p>Mot de passe oublié ?</p>
           </div>
           <div class="my-4 col-12 text-center">
-            <p>Vous n'avez pas encore de compte ! <a  class="link-register">S'inscrire</a></p>
+            <p>Vous n'avez pas encore de compte ! <a routerLink="/signup" class="link-register">S'inscrire</a></p>
           </div>
         </form>
       </div>

@@ -30,26 +30,25 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./src/assets/css/style.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "src/styles.css",
+              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./src/assets/css/style.css"
+
             ],
             "scripts": [
               "./src/assets/js/new/jquery.min.js",
               "./src/assets/js/new/bootstrap.min.js",
               "./src/assets/js/new/jquery.zoom.min.js",
               "./src/assets/js/new/nouislider.min.js",
-              "./src/assets/js/new/slick.min.js",
               "./src/assets/js/mm.js",
               "./src/assets/js/jquery-3.3.1.min.js",
               "./src/assets/js/jquery-ui.min.js",
               "./src/assets/js/jquery.slicknav.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "./src/assets/js/bootstrap.min.js"
+
+
             ]
           },
           "configurations": {
@@ -108,14 +107,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./src/assets/css/style.css",
-              
-              "src/styles.css"
-              
-              
 
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -124,5 +119,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
