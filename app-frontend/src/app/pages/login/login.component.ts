@@ -6,12 +6,13 @@ import { NgForm } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import Swal from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ FormsModule],
+  imports: [ FormsModule,RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
