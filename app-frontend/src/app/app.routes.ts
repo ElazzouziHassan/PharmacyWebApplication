@@ -24,7 +24,7 @@ export const routes: Routes = [
     {path:'shopingcart',component:ShopingCartComponent},
     {path:'checkout',component:CheckOutComponent},
     {path:'blogdetails',component:BlogdetailsComponent},
-    {path:'login',component:LoginComponent},
+    // {path:'login',component:LoginComponent},
 
 ];
 
