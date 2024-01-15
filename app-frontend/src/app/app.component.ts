@@ -6,6 +6,7 @@ import { NavbarComponent } from "./component/navbar/navbar.component";
 import { FooterComponent } from "./component/footer/footer.component";
 import { LeftasideallcategoriesComponent } from './component/LeftAsideAllCategories/leftasideallcategories.component';
 import { SearchallcategoriesComponent } from './component/searchallcategories/searchallcategories.component';
+import { TopHeaderComponent } from './component/navbar/top-header/top-header.component';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { SearchallcategoriesComponent } from './component/searchallcategories/se
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     imports: [CommonModule, RouterOutlet, HomeComponent, HomeComponent, NavbarComponent, FooterComponent,
-    LeftasideallcategoriesComponent,SearchallcategoriesComponent]
+    LeftasideallcategoriesComponent,SearchallcategoriesComponent,TopHeaderComponent]
 })
 export class AppComponent {
   title = 'app-frontend';
