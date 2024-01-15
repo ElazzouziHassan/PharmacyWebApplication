@@ -26,7 +26,7 @@ export const routes: Routes = [
     {path:'checkout',component:CheckOutComponent},
     {path:'blogdetails',component:BlogdetailsComponent},
     {path:'signup',component:SignupComponent},
-    {path:'login',component:LoginComponent},
+    // {path:'login',component:LoginComponent},
     {path:'',component:HomeComponent},
     {path:'**',component:PagenotfoundComponent},
 
