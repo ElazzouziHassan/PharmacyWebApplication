@@ -27,7 +27,16 @@
                         </ul> -->
                     </div>
                     <div class="header__top__right__auth">
-                        <a routerLink="/login"><i class="fa fa-user"></i> Login</a>
+                        <!-- <a routerLink="/login"><i class="fa fa-user"></i> Login</a> -->
+                        <button (click)="toggleLogin()" style="border:none;background-color: transparent;">
+                            <span *ngIf="!isLoginDisplayed">
+                                <i class="fa fa-user"></i> Login
+                            </span>
+                            <span *ngIf="isLoginDisplayed">
+                                Revenir <i class="fa fa-arrow-right"></i> 
+                            </span>
+                        </button>
+                    
                     </div>
                 </div>
             </div>

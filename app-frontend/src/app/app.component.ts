@@ -20,5 +20,14 @@ import { LoginComponent } from './pages/login/login.component';
 })
 export class AppComponent {
   title = 'app-frontend';
-  //afficherLoginSeule:boolean=false;
+  afficherLoginComponent:boolean=false;
+
+  switchToLogin(){
+    if(this.afficherLoginComponent==false){
+        
+      this.afficherLoginComponent=true;
+    }else{
+      this.afficherLoginComponent=false;
+    }
+  }
 }
