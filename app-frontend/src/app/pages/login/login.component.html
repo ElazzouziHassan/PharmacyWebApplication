@@ -1,4 +1,6 @@
-<div class="container-fluid " style="height: 100%;">
+<app-signup *ngIf="afficherSignUp"></app-signup>
+
+<div class="container-fluid " style="height: 100%;" *ngIf="!afficherSignUp">
   <div class="row page-login border-content">
     <div class="col-lg-6 p-0 col-12 ">
       <div class="d-flex align-items-center justify-content-center h-100">
@@ -18,7 +20,16 @@
             <p>Mot de passe oublié ?</p>
           </div>
           <div class="my-4 col-12 text-center">
-            <p>Vous n'avez pas encore de compte ! <a routerLink="/signup" class="link-register">S'inscrire</a></p>
+            <p>Vous n'avez pas encore de compte ! 
+              
+              <!-- <a routerLink="/signup" class="link-register"> -->
+                <!-- (click)="displaySignUp()" -->
+              <button class="link-register" (click)="toggleSignUp()"
+              style="background-color: transparent;border: none;color: blue;">  
+                S'inscrire
+              </button>
+              <!-- </a> -->
+            </p>
           </div>
         </form>
       </div>
@@ -29,3 +40,5 @@
     </div>
   </div>
 </div>
+
+
