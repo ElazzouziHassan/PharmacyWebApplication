@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('order_product', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity');
-            $table->double('total_price');
             $table->foreignId('order_id')
             ->constrained()
             ->onUpdate('cascade')
