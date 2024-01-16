@@ -25,7 +25,7 @@ export const routes: Routes = [
     {path:'shopingcart',component:ShopingCartComponent},
     {path:'checkout',component:CheckOutComponent},
     {path:'blogdetails',component:BlogdetailsComponent},
-    {path:'signup',component:SignupComponent},
+    // {path:'signup',component:SignupComponent},
     // {path:'login',component:LoginComponent},
     {path:'',component:HomeComponent},
     {path:'**',component:PagenotfoundComponent},

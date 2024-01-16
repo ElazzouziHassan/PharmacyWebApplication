@@ -25,6 +25,8 @@
     </div>
     
 </div>
-<app-login *ngIf="afficherLoginComponent"></app-login>
+<app-login *ngIf="afficherLoginComponent" (emitEventToDisplaySignUpComponent)="switchToSignUp()"></app-login>
+<!-- <app-signup *ngIf="afficherSignUpComponent"></app-signup> -->
+
 <app-footer *ngIf="!afficherLoginComponent"></app-footer>
 

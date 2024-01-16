@@ -8,6 +8,7 @@ import { LeftasideallcategoriesComponent } from './component/LeftAsideAllCategor
 import { SearchallcategoriesComponent } from './component/searchallcategories/searchallcategories.component';
 import { TopHeaderComponent } from './component/navbar/top-header/top-header.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 
 @Component({
@@ -21,13 +22,18 @@ import { LoginComponent } from './pages/login/login.component';
 export class AppComponent {
   title = 'app-frontend';
   afficherLoginComponent:boolean=false;
-
+  afficherSignUpComponent:boolean = false;
   switchToLogin(){
-    if(this.afficherLoginComponent==false){
+    if(this.afficherLoginComponent==false){ 
         
       this.afficherLoginComponent=true;
     }else{
       this.afficherLoginComponent=false;
     }
+  }
+
+  switchToSignUp(){
+    //this.afficherLoginComponent=false;
+    this.afficherSignUpComponent=true;
   }
 }
