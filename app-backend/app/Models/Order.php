@@ -17,7 +17,16 @@ class Order extends Model
 
     public function products(){
         return $this->belongsToMany(Product::class)
-        ->withPivot('quantite', 'prix');;
+        ->withPivot('quantity');
+    }
+
+    public function getTotal(){
+
+        $total = 0 ;
+        foreach ($this->products as $product) {
+            $total += $product->price * $product->pivot->quantity;
+        }
+        return $total;
     }
 
 }
