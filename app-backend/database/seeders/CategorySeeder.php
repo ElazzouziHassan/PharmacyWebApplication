@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CategorySeeder extends Seeder
 {
@@ -12,6 +14,12 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $categories = Category::factory(10)->create();
+
+        $categories->each(function ($category) {
+            $category->products()->saveMany(Product::factory(10)->create([
+                'category_id' => $category->id,
+            ]));
+        });
     }
 }
