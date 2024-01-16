@@ -1,5 +1,12 @@
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: rgb(245,245,245);height: 100%;display: flex;align-items: center;
+justify-content: center;">
     <div class="row page-login border-content">
+
+
+      <div class="col-lg-6 p-0 d-none d-lg-block d-lg-block" style="height: 100%;">
+        <img src="/assets/login.jpg" alt="Login Image" class="img-fluid h-100" style="height: 100%;object-fit: cover;">
+      </div>
+
       <div class="col-lg-6 p-0 col-12 ">
         <div class="d-flex align-items-center justify-content-center h-100">
           <form class="" #myForm="ngForm" (ngSubmit)="onSubmit()">
@@ -30,9 +37,7 @@
         </div>
       </div>
   
-      <div class="col-lg-6 p-0 d-none d-lg-block">
-        <img src="/assets/login.jpg" alt="Login Image" class="img-fluid h-100">
-      </div>
+      
     </div>
   </div>
   
