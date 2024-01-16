@@ -1,7 +1,7 @@
 <app-signup *ngIf="afficherSignUp"></app-signup>
 
 <div class="container-fluid " style="height: 100%;" *ngIf="!afficherSignUp">
-  <div class="row page-login border-content">
+  <div class="row page-login border-content" style="height: 100%;">
     <div class="col-lg-6 p-0 col-12 ">
       <div class="d-flex align-items-center justify-content-center h-100">
         <form class="" #myForm="ngForm" (ngSubmit)="onSubmit()">
@@ -35,8 +35,8 @@
       </div>
     </div>
 
-    <div class="col-lg-6 p-0 d-none d-lg-block">
-      <img src="/assets/login.jpg" alt="Login Image" class="img-fluid h-100">
+    <div class="col-lg-6 p-0 d-none d-lg-block" style="height: 100%;">
+      <img src="/assets/login.jpg" alt="Login Image" class="img-fluid h-100" style="object-fit: cover;">
     </div>
   </div>
 </div>
