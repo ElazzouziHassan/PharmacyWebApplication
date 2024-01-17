@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./pages/home/home.component";
 import { NavbarComponent } from "./component/navbar/navbar.component";
 import { FooterComponent } from "./component/footer/footer.component";
@@ -23,7 +23,13 @@ export class AppComponent {
   title = 'app-frontend';
   afficherLoginComponent:boolean=false;
   afficherSignUpComponent:boolean = false;
+
+  constructor(private route:Router){
+    
+  }
   switchToLogin(){
+    /* this.route.navigateByUrl("/login"); */
+
     if(this.afficherLoginComponent==false){ 
         
       this.afficherLoginComponent=true;
@@ -34,6 +40,7 @@ export class AppComponent {
 
   switchToSignUp(){
     //this.afficherLoginComponent=false;
+    /* this.route.navigateByUrl("/home"); */
     this.afficherSignUpComponent=true;
   }
 }

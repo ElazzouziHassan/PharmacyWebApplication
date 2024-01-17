@@ -24,8 +24,9 @@ export class LoginComponent {
 onSubmit() {
 
   Swal.fire({
-    title:'Good',
-    text:'you have inserted login = ' + this.user.username + ' and the password = ' +this.user.password
+    title:'You are at search area.',
+    text:'You are trying to get connected with the username :  '+ this.user.username+' and the password :' + this.user.password + ' once the APIs are inserted this functionality will be active',
+    timer:3000
   })
 }
   constructor(){

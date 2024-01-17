@@ -41,12 +41,12 @@
               "./src/assets/js/new/bootstrap.min.js",
               "./src/assets/js/new/jquery.zoom.min.js",
               "./src/assets/js/new/nouislider.min.js",
-              "./src/assets/js/mm.js",
               "./src/assets/js/jquery-3.3.1.min.js",
               "./src/assets/js/jquery-ui.min.js",
               "./src/assets/js/jquery.slicknav.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "./src/assets/js/bootstrap.min.js"
+              "./src/assets/js/bootstrap.min.js",
+              "./src/assets/js/mm.js"
 
 
             ]

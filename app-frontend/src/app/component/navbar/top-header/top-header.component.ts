@@ -1,15 +1,23 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink,RouterOutlet } from '@angular/router';
+import { routes } from '../../../app.routes';
 
 @Component({
   selector: 'top-header',
   standalone: true,
-  imports: [RouterLink,CommonModule],
+  imports: [RouterLink,CommonModule,RouterOutlet],
   templateUrl: './top-header.component.html',
   styleUrl: './top-header.component.scss'
 })
 export class TopHeaderComponent {
+
+  constructor(private route:Router){
+
+  }
+back() {
+this.route.navigateByUrl("/home");
+}
   
   isLoginDisplayed:boolean=false;
 

@@ -12,28 +12,29 @@
             <div class="col-lg-6 col-md-6">
                 <div class="header__top__right">
                     <div class="header__top__right__social">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab  fa-pinterest-p"></i></a>
+                        <a  ><i class="fab fa-facebook"></i></a>
+                        <a  ><i class="fab fa-twitter"></i></a>
+                        <a  ><i class="fab fa-linkedin"></i></a>
+                        <a  ><i class="fab  fa-pinterest-p"></i></a>
                     </div>
                     <div class="header__top__right__language">
                         <!-- <img src="img/language.png" alt="">
                         <div>English</div>
                         <span class="arrow_carrot-down"></span> -->
                       <!--   <ul>
-                            <li><a href="#">Spanis</a></li>
-                            <li><a href="#">English</a></li>
+                            <li><a  >Spanis</a></li>
+                            <li><a  >English</a></li>
                         </ul> -->
                     </div>
                     <div class="header__top__right__auth">
                         <!-- <a routerLink="/login"><i class="fa fa-user"></i> Login</a> -->
                         <button (click)="toggleLogin()" style="border:none;background-color: transparent;">
                             <span *ngIf="!isLoginDisplayed">
-                                <i class="fa fa-user"></i> Login
+                                <i class="fa fa-user"></i><a routerLink="/login">Login</a>
                             </span>
                             <span *ngIf="isLoginDisplayed">
-                                Revenir <i class="fa fa-arrow-right"></i> 
+                                <a routerLink="/home">Revenir</a>
+                                 <i class="fa fa-arrow-right"></i> 
                             </span>
                         </button>
                     
@@ -43,3 +44,4 @@
         </div>
     </div>
 </div>
+

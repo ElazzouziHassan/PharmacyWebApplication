@@ -13,11 +13,11 @@ export class CategoryService {
   }
 
 
-  getAllProducts(){
+  getAllCatigories(){
     return this.http.get(this.SERVER_URL+"");
 
   }
-  getOneProduct(id:Number){
+  getOneCategory(id:Number){
     return this.http.get(this.SERVER_URL+"");
   }
 
