@@ -31,6 +31,7 @@ export class SearchallcategoriesComponent {
 
   if(this.inputData !==""){
     Swal.fire({
+      icon:"success",
       title:'You are at search area.',
       text:'you are looking for '+this.inputData +' Product it will be provided once the APIs are inserted',
       timer:3000
