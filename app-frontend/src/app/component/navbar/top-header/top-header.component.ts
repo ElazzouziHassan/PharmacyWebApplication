@@ -36,5 +36,9 @@ this.route.navigateByUrl("/home");
   changeUrlOnClickToLogin() {
     this.location.go('/login');
   }
+
+  changeUrlOnClickToHome(){
+    this.location.go('/home');
+  }
   
 }

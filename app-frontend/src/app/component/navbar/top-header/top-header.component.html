@@ -33,7 +33,9 @@
                                 <i class="fa fa-user"></i><a (click)="changeUrlOnClickToLogin()">Login</a>
                             </span>
                             <span *ngIf="isLoginDisplayed">
-                                <a routerLink="/home">Revenir</a>
+                                <!-- <a routerLink="/home" (click)="changeUrlOnClickToHome()">Revenir</a> -->
+                                <!-- routerLink and using location don't work when used both -->
+                                <a (click)="changeUrlOnClickToHome()">Revenir</a>
                                  <i class="fa fa-arrow-right"></i> 
                             </span>
                         </button>
