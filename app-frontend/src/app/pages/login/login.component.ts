@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser';
 import Swal from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule,Location } from '@angular/common';
 import { SignupComponent } from '../signup/signup.component';
 
 
@@ -29,7 +29,7 @@ onSubmit() {
     timer:3000
   })
 }
-  constructor(){
+  constructor(private location:Location){
 
   }
 
@@ -50,5 +50,9 @@ onSubmit() {
     }else{
       this.afficherSignUp=false
     }
+  }
+
+  changeUrlOnClickToSignUp() {
+    this.location.go('/Sign-up');
   }
 }
