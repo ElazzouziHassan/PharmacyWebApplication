@@ -20,13 +20,32 @@ export class SearchallcategoriesComponent {
   GetSearchedData() {
     
     Swal.fire({
-      title:'You are at search area.',
-      text:'you are looking for '+this.inputData +' Product it will be provided once the APIs are inserted',
-      timer:3000
+     
     })
   
 
   this.inputData="";
 
+
+
+
+  if(this.inputData !==""){
+    Swal.fire({
+      title:'You are at search area.',
+      text:'you are looking for '+this.inputData +' Product it will be provided once the APIs are inserted',
+      timer:3000
+    })
+    this.inputData=""
   }
+  else{
+    Swal.fire({
+      icon:'warning',
+      title:'oooops!',
+      text:'Please enter a keyword to look for',
+      timer:3000
+    })
+    this.inputData=""
+
+  }
+}
 }
