@@ -32,7 +32,7 @@ Subscribe() {
       timer:3000
     })
     this.subscribedEmail=""
-   
+
   }
  
 
