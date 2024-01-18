@@ -30,7 +30,7 @@
                         <!-- <a routerLink="/login"><i class="fa fa-user"></i> Login</a> -->
                         <button (click)="toggleLogin()" style="border:none;background-color: transparent;">
                             <span *ngIf="!isLoginDisplayed">
-                                <i class="fa fa-user"></i><a routerLink="/login">Login</a>
+                                <i class="fa fa-user"></i><a (click)="changeUrlOnClickToLogin()">Login</a>
                             </span>
                             <span *ngIf="isLoginDisplayed">
                                 <a routerLink="/home">Revenir</a>

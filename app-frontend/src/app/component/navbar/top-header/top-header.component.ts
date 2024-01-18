@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router, RouterLink,RouterOutlet } from '@angular/router';
 import { routes } from '../../../app.routes';
@@ -12,9 +12,10 @@ import { routes } from '../../../app.routes';
 })
 export class TopHeaderComponent {
 
-  constructor(private route:Router){
+  constructor(private route:Router,private location: Location){
 
   }
+
 back() {
 this.route.navigateByUrl("/home");
 }
@@ -29,5 +30,10 @@ this.route.navigateByUrl("/home");
     }else{
       this.isLoginDisplayed=true
     }
+  }
+
+
+  changeUrlOnClickToLogin() {
+    this.location.go('/login');
   }
 }
