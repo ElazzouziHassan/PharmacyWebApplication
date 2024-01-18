@@ -30,13 +30,20 @@
                         <!-- <a routerLink="/login"><i class="fa fa-user"></i> Login</a> -->
                         <button (click)="toggleLogin()" style="border:none;background-color: transparent;">
                             <span *ngIf="!isLoginDisplayed">
-                                <i class="fa fa-user"></i><a (click)="changeUrlOnClickToLogin()">Login</a>
+                               <a (click)="changeUrlOnClickToLogin()">
+                                <i class="fa fa-user"></i>
+                                <span>
+                                    Login
+                                </span>                                
+                               </a>
                             </span>
                             <span *ngIf="isLoginDisplayed">
                                 <!-- <a routerLink="/home" (click)="changeUrlOnClickToHome()">Revenir</a> -->
                                 <!-- routerLink and using location don't work when used both -->
-                                <a (click)="changeUrlOnClickToHome()">Revenir</a>
+                                <a (click)="changeUrlOnClickToHome()">
+                                    Revenir
                                  <i class="fa fa-arrow-right"></i> 
+                                </a>
                             </span>
                         </button>
                     
