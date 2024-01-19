@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { OwlItemComponent } from './owl-item/owl-item.component';
+import { OwlStageComponent } from './owl-stage/owl-stage.component';
 
 @Component({
-  selector: 'app-owl',
+  selector: 'owl-carousel',
   standalone: true,
-  imports: [],
+  imports: [OwlItemComponent,OwlStageComponent],
   templateUrl: './owl.component.html',
   styleUrl: './owl.component.scss'
 })
