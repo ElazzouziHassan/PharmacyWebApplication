@@ -33,10 +33,14 @@
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./src/assets/css/style.css"
+              "./src/assets/css/style.css",
+              "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
+              "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
+              "src/styles.css"
 
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
               "./src/assets/js/new/jquery.min.js",
               "./src/assets/js/new/bootstrap.min.js",
               "./src/assets/js/new/jquery.zoom.min.js",
@@ -46,7 +50,8 @@
               "./src/assets/js/jquery.slicknav.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "./src/assets/js/bootstrap.min.js",
-              "./src/assets/js/mm.js"
+              "./src/assets/js/mm.js",
+              "node_modules/owl.carousel/dist/owl.carousel.min.js"
 
 
             ]
