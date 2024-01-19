@@ -11,4 +11,5 @@ import { OwlStageComponent } from './owl-stage/owl-stage.component';
 })
 export class OwlComponent {
 
+  items:any=["Fresh Fruit","Vegetables","Just Fruit :D"]
 }

@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class OwlItemComponent {
 
-  // @Input() title:string="";
+  @Input() title:string="";
 }
