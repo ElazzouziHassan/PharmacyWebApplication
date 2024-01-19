@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+declare var $: any;
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./pages/home/home.component";
@@ -27,6 +28,21 @@ export class AppComponent {
   constructor(private route:Router){
     
   }
+
+  ngOnInit() {
+    $(document).ready(function () {
+      $('.owl-carousel').owlCarousel({
+        items: 3,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true
+      });
+    });
+  }
+
+
   switchToLogin(){
     /* this.route.navigateByUrl("/login"); */
 
