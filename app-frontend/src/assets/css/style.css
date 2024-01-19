@@ -1007,8 +1007,8 @@ a{
 }
 
 .latest-product__item__pic img {
-	height: 110px;
-	width: 110px;
+	/* height: 110%; */
+	width: 10px;
 }
 
 .latest-product__item__text {
