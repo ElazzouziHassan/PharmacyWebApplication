@@ -25,6 +25,7 @@ export class HomeComponent {
   numbersArray: number[] = [];
   products:any;
   
+  featuredProducts:any[]=["Face masks","Vitamnies"];
   constructor(pros:ProductService){
 
     this.products =  pros.getAllProducts();

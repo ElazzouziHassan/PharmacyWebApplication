@@ -28,10 +28,7 @@
                 <div class="featured__controls">
                     <ul>
                         <li class="active" data-filter="*">All</li>
-                        <li data-filter=".oranges">Oranges</li>
-                        <li data-filter=".fresh-meat">Fresh Meat</li>
-                        <li data-filter=".vegetables">Vegetables</li>
-                        <li data-filter=".fastfood">Fastfood</li>
+                        <li *ngFor="let productName of featuredProducts">{{productName}}</li>
                     </ul>
                 </div>
             </div>
@@ -75,6 +72,7 @@
                                     </div>
                                 </div>
                             </owl-stage>
+                            
                             <owl-nav></owl-nav>
                     </div>
                 </div>
@@ -86,7 +84,7 @@
                             <owl-stage>    
                                 <div class="owl-item" style="width: 360px;">
                                     <div class="latest-prdouct__slider__item">
-                                        <latest-item [productUrlPicture]="'../../../assets/images/bg.png'"
+                                        <latest-item [productUrlPicture]="'../../../../../../../../src/assets/images/bg.png'"
                                             [productName]="'second compo'" [price]="'30DH'">
                                         </latest-item>
                                     </div>
