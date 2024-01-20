@@ -996,24 +996,24 @@ a{
 }
 
 .latest-product__item {
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 	overflow: hidden;
 	display: block;
 }
 
 .latest-product__item__pic {
 	float: left;
-	margin-right: 26px;
+	margin-right: 5px;
 }
 
 .latest-product__item__pic img {
-	/* height: 110%; */
-	width: 10px;
+	height: 70%;
+	/* width: 40px; */
 }
 
 .latest-product__item__text {
 	overflow: hidden;
-	padding-top: 10px;
+	padding-top: 5px;
 }
 
 .latest-product__item__text h6 {
