@@ -23,11 +23,23 @@ export class LoginComponent {
   user = { username: '', password: '' };
 onSubmit() {
 
-  Swal.fire({
-    title:'You are at search area.',
-    text:'You are trying to get connected with the username :  '+ this.user.username+' and the password :' + this.user.password + ' once the APIs are inserted this functionality will be active',
-    timer:3000
-  })
+  if(this.user.password=="" && this.user.password==""){
+    Swal.fire({
+      icon:"warning",
+      title:'Oooops!',
+      text:'Please fill all the fields',
+      timer:3000
+    })
+  }
+  else{
+    Swal.fire({
+      title:'You are at search area.',
+      text:'You are trying to get connected with the username :  '+ this.user.username+' and the password :' + this.user.password + ' once the APIs are inserted this functionality will be active',
+      timer:3000
+    })
+  }
+
+
 }
   constructor(private location:Location){
 
