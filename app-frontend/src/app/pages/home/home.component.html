@@ -18,7 +18,7 @@
         </div>
     </div>
 </section>
-<section class="featured spad" style="background-color: brown;">
+<section class="featured spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -58,19 +58,21 @@
     </div>
 </section>
 
+
 <section class="latest-product spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="latest-product__text">
                     <h4>Latest Products</h4>
-                    <div class="latest-product__slider owl-carousel owl-loaded owl-drag">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage"
-                                style="transform: translate3d(-1080px, 0px, 0px); transition: all 1.2s ease 0s; width: 2160px;">
+                    <div class="latest-product__slider owl-carousel owl-loaded owl-drag" >
+                        <!-- <div class="owl-stage-outer"> -->
+                            <!-- <div class="owl-stage"style="transform: translate3d(-1080px, 0px, 0px); transition: all 1.2s ease 0s; width: 2160px;"> -->
+                            <owl-stage>  
                                 <div class="owl-item" style="width: 360px;">
+                                <!-- <owl-item>     -->
                                     <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
+                                        <!-- <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
                                             <div class="latest-product__item__pic">
                                                 <img src="../../../assets/images/bg.png" alt="">
                                             </div>
@@ -78,63 +80,49 @@
                                                 <h6>Crab Pool Security</h6>
                                                 <span>$30.00</span>
                                             </div>
-                                        </a>
+                                        </a> -->
+                                        <latest-item [productUrlPicture]="'../../../assets/images/bg.png'"
+                                            [productName]="'a compon'" [price]="'gratos'">
+
+                                        </latest-item>
+                                    </div>
+                                <!-- </owl-item> -->
+                                </div>
+                                <div class="owl-item" style="width: 360px;">
+                                    <div class="latest-prdouct__slider__item">
+                                        <latest-item [productUrlPicture]="'../../../assets/images/bg.png'"
+                                            [productName]="'second compo'" [price]="'30DH'">
+
+                                        </latest-item>
                                     </div>
                                 </div>
                                 <div class="owl-item" style="width: 360px;">
                                     <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
-                                            <div class="latest-product__item__pic">
-                                                <img src="../../../assets/images/bg.png" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
+                                        <latest-item [productUrlPicture]="'../../../assets/images/bg.png'"
+                                            [productName]="'second compo'" [price]="'30DH'">
+
+                                        </latest-item>
                                     </div>
                                 </div>
                                 <div class="owl-item" style="width: 360px;">
                                     <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
-                                            <div class="latest-product__item__pic">
-                                                <img src="../../../assets/images/bg.png" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
+                                        <latest-item [productUrlPicture]="'../../../assets/images/bg.png'"
+                                            [productName]="'Third 3 compon'" [price]="'30DH'">
+
+                                        </latest-item>
                                     </div>
                                 </div>
                                 <div class="owl-item" style="width: 360px;">
                                     <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
-                                            <div class="latest-product__item__pic">
-                                                <img src="../../../assets/images/bg.png" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
+                                        <latest-item [productUrlPicture]="'../../../assets/images/bg.png'"
+                                            [productName]="'Fourth 4 compo'" [price]="'30DH'">
+
+                                        </latest-item>
                                     </div>
                                 </div>
-                                <div class="owl-item" style="width: 360px;">
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
-                                            <div class="latest-product__item__pic">
-                                                <img src="../../../assets/images/bg.png" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </owl-stage>
+                            <!-- </div> -->
+                        <!-- </div> -->
                         <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span
                                     class="fa fa-angle-left"><span></span></span></button><button type="button"
                                 role="presentation" class="owl-next"><span
@@ -143,14 +131,22 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="latest-product__text">
                     <h4>Top Rated Products</h4>
                     <div class="latest-product__slider owl-carousel owl-loaded owl-drag">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage"
-                                style="transform: translate3d(-1080px, 0px, 0px); transition: all 1.2s ease 0s; width: 2160px;">
+                        <!-- <div class="owl-stage-outer"> -->
+                            <!-- <div class="owl-stage"style="transform: translate3d(-1080px, 0px, 0px); transition: all 1.2s ease 0s; width: 2160px;"> -->
+                            <owl-stage>    
                                 <div class="owl-item" style="width: 360px;">
+                                    <div class="latest-prdouct__slider__item">
+                                        <latest-item [productUrlPicture]="'../../../assets/images/bg.png'"
+                                            [productName]="'second compo'" [price]="'30DH'">
+
+                                        </latest-item>
+                                    </div>
+                                </div>
+                                <!-- <div class="owl-item" style="width: 360px;">
                                     <div class="latest-prdouct__slider__item">
                                         <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
                                             <div class="latest-product__item__pic">
@@ -162,8 +158,8 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item" style="width: 360px;">
+                                </div> -->
+                                <!-- <div class="owl-item" style="width: 360px;">
                                     <div class="latest-prdouct__slider__item">
                                         <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
                                             <div class="latest-product__item__pic">
@@ -175,8 +171,8 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item" style="width: 360px;">
+                                </div> -->
+                                <!-- <div class="owl-item" style="width: 360px;">
                                     <div class="latest-prdouct__slider__item">
                                         <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
                                             <div class="latest-product__item__pic">
@@ -188,8 +184,8 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item" style="width: 360px;">
+                                </div> -->
+                                <!-- <div class="owl-item" style="width: 360px;">
                                     <div class="latest-prdouct__slider__item">
                                         <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
                                             <div class="latest-product__item__pic">
@@ -201,8 +197,8 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item" style="width: 360px;">
+                                </div> -->
+                                <!-- <div class="owl-item" style="width: 360px;">
                                     <div class="latest-prdouct__slider__item">
                                         <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
                                             <div class="latest-product__item__pic">
@@ -214,22 +210,10 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item" style="width: 360px;">
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
-                                            <div class="latest-product__item__pic">
-                                                <img src="../../../assets/images/bg.png" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                </div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                        </owl-stage>
                         <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span
                                     class="fa fa-angle-left"><span></span></span></button><button type="button"
                                 role="presentation" class="owl-next"><span
@@ -238,103 +222,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="latest-product__text">
-                    <h4>Review Products</h4>
-                    <div class="latest-product__slider owl-carousel owl-loaded owl-drag">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage"
-                                style="transform: translate3d(-720px, 0px, 0px); transition: all 1.2s ease 0s; width: 2160px;">
-                                <div class="owl-item" style="width: 360px;">
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
-                                            <div class="latest-product__item__pic">
-                                                <img src="../../../assets/images/bg.png" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 360px;">
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
-                                            <div class="latest-product__item__pic">
-                                                <img src="../../../assets/images/bg.png" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 360px;">
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
-                                            <div class="latest-product__item__pic">
-                                                <img src="../../../assets/images/bg.png" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                     
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 360px;">
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
-                                            <div class="latest-product__item__pic">
-                                                <img src="../../../assets/images/bg.png" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 360px;">
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
-                                            <div class="latest-product__item__pic">
-                                                <img src="../../../assets/images/bg.png" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                       
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 360px;">
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item" *ngFor="let i of numbersArray">
-                                            <div class="latest-product__item__pic">
-                                                <img src="../../../assets/images/bg.png" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span
-                                    class="fa fa-angle-left"><span></span></span></button><button type="button"
-                                role="presentation" class="owl-next"><span
-                                    class="fa fa-angle-right"><span></span></span></button></div>
-                        <div class="owl-dots disabled"></div>
-                    </div>
-                </div>
-            </div>
+            <!--  -->
         </div>
     </div>
 </section>
