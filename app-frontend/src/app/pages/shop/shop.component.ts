@@ -20,8 +20,6 @@ export class ShopComponent {
   constructor(pros:ProductService){
 
     this.products =  pros.getAllProducts();
-
-    console.log(this.products);
   }
   
   
