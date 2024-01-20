@@ -1,13 +1,42 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
  
   SERVER_URL="http://localhost:3000/api";
+  products:any =[{
+    title:"Product ",
+    price : Math.floor(Math.random() * 340) ,
+    path:"../../../assets/images/bg.png"
+  },{
+    title:"Product ",
+    price : Math.floor(Math.random() * 340) ,
+    path:"../../../assets/images/bg.png"
+  },{
+    title:"Product ",
+    price : Math.floor(Math.random() * 340) ,
+    path:"../../../assets/images/bg.png"
+  },{
+    title:"Product ",
+    price : Math.floor(Math.random() * 340) ,
+    path:"../../../assets/images/bg.png"
+  },{
+    title:"Product ",
+    price : Math.floor(Math.random() * 340) ,
+    path:"../../../assets/images/bg.png"
+  },{
+    title:"Product ",
+    price : Math.floor(Math.random() * 340) ,
+    path:"../../../assets/images/bg.png"
+  },{
+    title:"Product ",
+    price : Math.floor(Math.random() * 340) ,
+    path:"../../../assets/images/bg.png"
+  }]
 
   constructor(private http:HttpClient) { 
 
@@ -15,7 +44,9 @@ export class ProductService {
 
 
   getAllProducts(){
-    return this.http.get(this.SERVER_URL+"");
+    /* debugger; */
+    //return this.http.get(this.SERVER_URL+"");
+    return this.products;
 
   }
   getOneProduct(id:Number){
