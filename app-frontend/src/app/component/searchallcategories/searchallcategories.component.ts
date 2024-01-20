@@ -19,15 +19,8 @@ export class SearchallcategoriesComponent {
 
   GetSearchedData() {
     
-    Swal.fire({
-     
-    })
-  
 
   this.inputData="";
-
-
-
 
   if(this.inputData !==""){
     Swal.fire({
