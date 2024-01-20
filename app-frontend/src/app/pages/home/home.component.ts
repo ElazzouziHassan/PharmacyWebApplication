@@ -29,7 +29,6 @@ export class HomeComponent {
   generateNumbersArray(): void {
     for (let i = 0; i < 3; i++) {
       this.numbersArray.push(i);
-      console.log(i);
     }
   }
 
