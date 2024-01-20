@@ -8,12 +8,14 @@ import { CurrencyPipe, NgFor } from '@angular/common';
 import { OwlStageComponent } from './owl/owl-stage/owl-stage.component';
 import { OwlItemComponent } from './owl/owl-item/owl-item.component';
 import { LatestItemComponent } from './latest-product/latest-item/latest-item.component';
+import { OwlNavComponent } from './owl-nav/owl-nav.component';
 
 
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [NgFor,RouterLink,RouterLinkActive,MainComponent,OwlComponent,HttpClientModule,CurrencyPipe,OwlStageComponent,OwlItemComponent,LatestItemComponent],
+  imports: [NgFor,RouterLink,RouterLinkActive,MainComponent,OwlComponent,HttpClientModule,CurrencyPipe,OwlStageComponent,OwlItemComponent,
+    LatestItemComponent,OwlNavComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   providers:[ProductService]
