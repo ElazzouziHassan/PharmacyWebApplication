@@ -17,12 +17,20 @@ import { CurrencyPipe, NgFor } from '@angular/common';
 })
 export class HomeComponent {
 
+  numbersArray: number[] = [];
   products:any;
   
   constructor(pros:ProductService){
 
     this.products =  pros.getAllProducts();
     console.log(this.products)
+    this.generateNumbersArray();
+  }
+  generateNumbersArray(): void {
+    for (let i = 0; i < 3; i++) {
+      this.numbersArray.push(i);
+      console.log(i);
+    }
   }
 
 }
