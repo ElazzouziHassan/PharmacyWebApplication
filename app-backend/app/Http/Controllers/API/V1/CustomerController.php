@@ -27,7 +27,7 @@ class CustomerController extends Controller
         if ($includeOrders) {
             $customers = $customers -> with('orders');
         }
-        
+
         return new CustomerCollection($customers->paginate()->appends($request->query()));
     }
 
@@ -52,6 +52,12 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
+        $includeOrders = request() -> query('includeOrders');
+
+        if ($includeOrders) {
+            return new CustomerResource($customer-> loadMissing('orders')) ;
+        }
+
         return new CustomerResource($customer);
     }
 

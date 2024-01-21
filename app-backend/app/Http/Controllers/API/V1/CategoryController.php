@@ -20,7 +20,7 @@ class CategoryController extends Controller
     {
         $filter = new CategoriesFilter();
         $queryItems = $filter -> transform($request);
-        
+
         $includeProducts = $request -> query('includeProducts');
         $categories = Category::where($queryItems);
 
@@ -51,6 +51,12 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+        $includeProducts = request() -> query('includeProducts');
+
+        if ($includeProducts) {
+           return new CategoryResource($category-> loadMissing('products')) ;
+        }
+
         return new CategoryResource($category);
     }
 

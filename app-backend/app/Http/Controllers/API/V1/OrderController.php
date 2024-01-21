@@ -53,6 +53,12 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $includeProducts = request() -> query('includeProducts');
+
+        if ($includeProducts) {
+            return new OrderResource($order -> loadMissing('products')) ;
+        }
+
         return new OrderResource($order);
     }
 

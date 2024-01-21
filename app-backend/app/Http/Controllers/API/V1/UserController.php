@@ -27,7 +27,7 @@ class UserController extends Controller
         if ($includeProducts) {
             $users = $users -> with('products');
         }
-        
+
         return new UserCollection($users->paginate()->appends($request->query()));
     }
 
@@ -52,6 +52,12 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+        $includeProducts = request() -> query('includeProducts');
+
+        if ($includeProducts) {
+            return new UserResource($user -> loadMissing('products'));
+        }
+
         return new UserResource($user);
     }
 

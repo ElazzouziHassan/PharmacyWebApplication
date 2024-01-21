@@ -53,7 +53,13 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $includeOrders = request() -> query('includeOrders');
+
+        if ($includeOrders) {
+            return new ProductResource($product -> loadMissing('orders')) ;
+        }
+        return new ProductResource($product);
+
     }
 
     /**
@@ -61,7 +67,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return new ProductResource($product);
+        //
     }
 
     /**
