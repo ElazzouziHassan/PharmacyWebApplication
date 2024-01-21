@@ -1,9 +1,10 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'featured-product',
   standalone: true,
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: './featured-product.component.html',
   styleUrl: './featured-product.component.scss'
 })
