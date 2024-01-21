@@ -17,11 +17,25 @@ import { RouterLink } from '@angular/router';
 export class SignupComponent {
   user = { email:'', username: '', password1: '', password2: '' };
   onSubmit() {
+    if(this.user.email=="" || this.user.email=="" || this.user.email=="" || this.user.email=="" ){
+      Swal.fire({
+        icon:'warning',
+        title: 'Oooops!',
+        text: 'Please Fill all the Fields'
+      })
+    }
+    else if(this.user.password1 !==this.user.password2){
+      Swal.fire({
+        icon:'warning',
+        title: 'Oooops!',
+        text: 'Password doesnt match'
+      })
+    }
 
     Swal.fire({
+      icon:'success',
       title: 'Good',
-      text: 'the email is = '+this.user.email+'you have inserted login = ' + this.user.username + ' and the password = ' + this.user.password1 +
-      'confirmed password is ' + this.user.password2
+      text: 'you have succesfully sign up.'
     })
   }
 
