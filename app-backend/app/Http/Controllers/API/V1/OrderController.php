@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API\V1;
 
 use App\Models\Order;
+use Illuminate\Http\Request;
+use App\Filters\V1\OrdersFilter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Resources\V1\OrderResource;
@@ -14,9 +16,21 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new OrderCollection(Order::all());    }
+        $filter = new OrdersFilter();
+        $queryItems = $filter -> transform($request);
+
+        $includeProducts = $request -> query('includeProducts');
+        $orders = Order::where($queryItems);
+
+        if ($includeProducts) {
+            $orders = $orders -> with('products');
+        }
+
+        return new OrderCollection($orders->paginate()->appends($request->query()));
+
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -39,6 +53,12 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $includeProducts = request() -> query('includeProducts');
+
+        if ($includeProducts) {
+            return new OrderResource($order -> loadMissing('products')) ;
+        }
+
         return new OrderResource($order);
     }
 

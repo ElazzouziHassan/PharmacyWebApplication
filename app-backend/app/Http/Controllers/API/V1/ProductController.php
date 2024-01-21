@@ -3,20 +3,34 @@
 namespace App\Http\Controllers\API\V1;
 
 use App\Models\Product;
+use Illuminate\Http\Request;
+use App\Filters\V1\ProductsFilter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
+use App\Http\Resources\V1\ProductResource;
 use App\Http\Requests\UpdateProductRequest;
 use App\Http\Resources\V1\ProductCollection;
-use App\Http\Resources\V1\ProductResource;
+use GuzzleHttp\Handler\Proxy;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new ProductCollection(Product::all());    }
+        $filter = new ProductsFilter();
+        $queryItems = $filter -> transform($request);
+
+        $includeOrders = $request -> query('includeOrders');
+        $products = Product::where($queryItems);
+
+        if ($includeOrders) {
+            $products = $products -> with('orders');
+        }
+
+        return new ProductCollection($products->paginate()->appends($request->query()));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -39,7 +53,13 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $includeOrders = request() -> query('includeOrders');
+
+        if ($includeOrders) {
+            return new ProductResource($product -> loadMissing('orders')) ;
+        }
+        return new ProductResource($product);
+
     }
 
     /**
@@ -47,7 +67,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return new ProductResource($product);
+        //
     }
 
     /**
