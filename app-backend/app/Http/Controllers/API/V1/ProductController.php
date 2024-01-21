@@ -3,20 +3,31 @@
 namespace App\Http\Controllers\API\V1;
 
 use App\Models\Product;
+use Illuminate\Http\Request;
+use App\Filters\V1\ProductsFilter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
+use App\Http\Resources\V1\ProductResource;
 use App\Http\Requests\UpdateProductRequest;
 use App\Http\Resources\V1\ProductCollection;
-use App\Http\Resources\V1\ProductResource;
+use GuzzleHttp\Handler\Proxy;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new ProductCollection(Product::all());    }
+        $filter = new ProductsFilter();
+        $queryItems = $filter -> transform($request);
+
+        if (count($queryItems) == 0) {
+            return new ProductCollection(Product::all());
+        }
+        return new ProductCollection(Product::where($queryItems)->paginate());
+
+    }
 
     /**
      * Show the form for creating a new resource.

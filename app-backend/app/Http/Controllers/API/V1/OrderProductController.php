@@ -3,20 +3,29 @@
 namespace App\Http\Controllers\API\V1;
 
 use App\Models\OrderProduct;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Filters\V1\OrderProductFilter;
 use App\Http\Requests\StoreOrderProductRequest;
+use App\Http\Resources\V1\OrderProductResource;
 use App\Http\Requests\UpdateOrderProductRequest;
 use App\Http\Resources\V1\OrderProductCollection;
-use App\Http\Resources\V1\OrderProductResource;
 
 class OrderProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new OrderProductCollection(OrderProduct::all());    }
+        $filter = new OrderProductFilter();
+        $queryItems = $filter -> transform($request);
+
+        if (count($queryItems) == 0) {
+            return new OrderProductCollection(OrderProduct::all());
+        }
+        return new OrderProductCollection(OrderProduct::where($queryItems)->paginate());
+    }
 
     /**
      * Show the form for creating a new resource.
