@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API\V1;
 
 use App\Models\OrderProduct;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreOrderProductRequest;
 use App\Http\Requests\UpdateOrderProductRequest;
+use App\Http\Resources\V1\OrderProductCollection;
+use App\Http\Resources\V1\OrderProductResource;
 
 class OrderProductController extends Controller
 {
@@ -13,8 +16,7 @@ class OrderProductController extends Controller
      */
     public function index()
     {
-        //
-    }
+        return new OrderProductCollection(OrderProduct::all());    }
 
     /**
      * Show the form for creating a new resource.
@@ -37,7 +39,7 @@ class OrderProductController extends Controller
      */
     public function show(OrderProduct $orderProduct)
     {
-        //
+        return new OrderProductResource($orderProduct);
     }
 
     /**

@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API\V1;
 
 use App\Models\Product;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Http\Resources\V1\ProductCollection;
+use App\Http\Resources\V1\ProductResource;
 
 class ProductController extends Controller
 {
@@ -13,8 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
-    }
+        return new ProductCollection(Product::all());    }
 
     /**
      * Show the form for creating a new resource.
@@ -45,7 +47,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return new ProductResource($product);
     }
 
     /**
