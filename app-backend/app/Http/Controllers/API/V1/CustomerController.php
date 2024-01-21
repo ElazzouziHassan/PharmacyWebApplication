@@ -21,10 +21,14 @@ class CustomerController extends Controller
         $filter = new CustomersFilter();
         $queryItems = $filter -> transform($request);
 
-        if (count($queryItems) == 0) {
-            return new CustomerCollection(Customer::all());
+        $includeOrders = $request -> query('includeOrders');
+        $customers = Customer::where($queryItems);
+
+        if ($includeOrders) {
+            $customers = $customers -> with('orders');
         }
-        return new CustomerCollection(Customer::where($queryItems)->paginate());
+        
+        return new CustomerCollection($customers->paginate()->appends($request->query()));
     }
 
     /**

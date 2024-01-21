@@ -21,7 +21,8 @@ class ProductResource extends JsonResource
             'price' => $this -> price,
             'image' => $this -> image,
             'categoryId' => $this -> category_id,
-            'userId' => $this -> user_id
+            'userId' => $this -> user_id,
+            'orders' => OrderResource::collection($this -> whenLoaded('orders')),
         ];
     }
 }

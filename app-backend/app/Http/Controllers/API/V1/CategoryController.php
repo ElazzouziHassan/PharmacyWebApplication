@@ -20,11 +20,14 @@ class CategoryController extends Controller
     {
         $filter = new CategoriesFilter();
         $queryItems = $filter -> transform($request);
+        
+        $includeProducts = $request -> query('includeProducts');
+        $categories = Category::where($queryItems);
 
-        if (count($queryItems) == 0) {
-            return new CategoryCollection(Category::all());
+        if ($includeProducts) {
+            $categories = $categories -> with('products');
         }
-        return new CategoryCollection(Category::where($queryItems)->paginate());
+        return new CategoryCollection($categories->paginate()->appends($request->query()));
     }
 
     /**

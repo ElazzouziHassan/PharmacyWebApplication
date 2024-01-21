@@ -21,10 +21,14 @@ class OrderController extends Controller
         $filter = new OrdersFilter();
         $queryItems = $filter -> transform($request);
 
-        if (count($queryItems) == 0) {
-            return new OrdersFilter(Order::all());
+        $includeProducts = $request -> query('includeProducts');
+        $orders = Order::where($queryItems);
+
+        if ($includeProducts) {
+            $orders = $orders -> with('products');
         }
-        return new OrdersFilter(Order::where($queryItems)->paginate());
+
+        return new OrderCollection($orders->paginate()->appends($request->query()));
 
     }
 

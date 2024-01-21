@@ -22,11 +22,14 @@ class ProductController extends Controller
         $filter = new ProductsFilter();
         $queryItems = $filter -> transform($request);
 
-        if (count($queryItems) == 0) {
-            return new ProductCollection(Product::all());
-        }
-        return new ProductCollection(Product::where($queryItems)->paginate());
+        $includeOrders = $request -> query('includeOrders');
+        $products = Product::where($queryItems);
 
+        if ($includeOrders) {
+            $products = $products -> with('orders');
+        }
+
+        return new ProductCollection($products->paginate()->appends($request->query()));
     }
 
     /**

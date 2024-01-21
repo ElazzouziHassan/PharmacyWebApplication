@@ -21,10 +21,10 @@ class OrderProductController extends Controller
         $filter = new OrderProductFilter();
         $queryItems = $filter -> transform($request);
 
-        if (count($queryItems) == 0) {
-            return new OrderProductCollection(OrderProduct::all());
-        }
-        return new OrderProductCollection(OrderProduct::where($queryItems)->paginate());
+        $orderProduct = OrderProduct::where($queryItems);
+
+        return new OrderProductCollection($orderProduct->paginate()->appends($request->query()));
+
     }
 
     /**

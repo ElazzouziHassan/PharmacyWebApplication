@@ -21,11 +21,14 @@ class UserController extends Controller
         $filter = new UsersFilter();
         $queryItems = $filter -> transform($request);
 
-        if (count($queryItems) == 0) {
-            return new UserCollection(User::all());
-        }
-        return new UserCollection(User::where($queryItems)->paginate());
+        $includeProducts = $request -> query('includeProducts');
+        $users = User::where($queryItems);
 
+        if ($includeProducts) {
+            $users = $users -> with('products');
+        }
+        
+        return new UserCollection($users->paginate()->appends($request->query()));
     }
 
     /**
