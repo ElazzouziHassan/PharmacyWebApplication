@@ -24,19 +24,22 @@ export class SignupComponent {
         text: 'Please Fill all the Fields'
       })
     }
-    else if(this.user.password1 !==this.user.password2){
+    else if(this.user.password1 !== this.user.password2){
       Swal.fire({
         icon:'warning',
         title: 'Oooops!',
         text: 'Password doesnt match'
       })
     }
+    else{
+      Swal.fire({
+        icon:'success',
+        title: 'Good',
+        text: 'you have succesfully sign up.'
+      })
+    }
 
-    Swal.fire({
-      icon:'success',
-      title: 'Good',
-      text: 'you have succesfully sign up.'
-    })
+   
   }
 
 
