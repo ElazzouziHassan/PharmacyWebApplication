@@ -6,10 +6,11 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Filters\V1\CategoriesFilter;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Requests\V1\StoreCategoryRequest;
 use App\Http\Resources\V1\CategoryResource;
-use App\Http\Requests\UpdateCategoryRequest;
+use App\Http\Requests\V1\UpdateCategoryRequest;
 use App\Http\Resources\V1\CategoryCollection;
+use PhpParser\Node\Stmt\Catch_;
 
 class CategoryController extends Controller
 {
@@ -31,19 +32,11 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        return new CategoryResource(Category::create($request->all()));
     }
 
     /**
@@ -58,14 +51,6 @@ class CategoryController extends Controller
         }
 
         return new CategoryResource($category);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Category $category)
-    {
-        //
     }
 
     /**

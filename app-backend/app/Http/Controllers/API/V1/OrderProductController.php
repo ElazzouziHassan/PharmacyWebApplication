@@ -6,9 +6,9 @@ use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Filters\V1\OrderProductFilter;
-use App\Http\Requests\StoreOrderProductRequest;
+use App\Http\Requests\V1\StoreOrderProductRequest;
 use App\Http\Resources\V1\OrderProductResource;
-use App\Http\Requests\UpdateOrderProductRequest;
+use App\Http\Requests\V1\UpdateOrderProductRequest;
 use App\Http\Resources\V1\OrderProductCollection;
 
 class OrderProductController extends Controller
@@ -28,14 +28,6 @@ class OrderProductController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreOrderProductRequest $request)
@@ -49,14 +41,6 @@ class OrderProductController extends Controller
     public function show(OrderProduct $orderProduct)
     {
         return new OrderProductResource($orderProduct);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(OrderProduct $orderProduct)
-    {
-        //
     }
 
     /**

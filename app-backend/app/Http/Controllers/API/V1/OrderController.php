@@ -6,9 +6,9 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Filters\V1\OrdersFilter;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreOrderRequest;
+use App\Http\Requests\V1\StoreOrderRequest;
 use App\Http\Resources\V1\OrderResource;
-use App\Http\Requests\UpdateOrderRequest;
+use App\Http\Requests\V1\UpdateOrderRequest;
 use App\Http\Resources\V1\OrderCollection;
 
 class OrderController extends Controller
@@ -33,19 +33,11 @@ class OrderController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreOrderRequest $request)
     {
-        //
+        return new OrderResource(Order::create($request->all()));
     }
 
     /**
@@ -60,14 +52,6 @@ class OrderController extends Controller
         }
 
         return new OrderResource($order);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Order $order)
-    {
-        //
     }
 
     /**

@@ -5,8 +5,8 @@ namespace App\Http\Controllers\API\V1;
 use App\Filters\V1\UsersFilter;
 use App\Models\User;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\V1\StoreUserRequest;
+use App\Http\Requests\V1\UpdateUserRequest;
 use App\Http\Resources\V1\UserCollection;
 use App\Http\Resources\V1\UserResource;
 use Illuminate\Http\Request;
@@ -32,19 +32,12 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreUserRequest $request)
     {
-        //
+        
+        return new UserResource(User::create($request->all()));
     }
 
     /**
@@ -59,14 +52,6 @@ class UserController extends Controller
         }
 
         return new UserResource($user);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
-    {
-        //
     }
 
     /**
