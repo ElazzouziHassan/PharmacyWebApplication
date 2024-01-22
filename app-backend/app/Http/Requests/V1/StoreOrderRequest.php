@@ -23,7 +23,17 @@ class StoreOrderRequest extends FormRequest
     {
         return [
             'prescription' => ['required','file', 'max:2048', 'mimes:jpg,pdf,docx'] ,
-            'customer_id' => ['required', 'exists:customers,id']
+            'customerId' => ['required', 'exists:customers,id'],
+            'productId' => ['required', 'exists:customers,id'],
+            'quantity' => ['required', 'integer', 'min:1']
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this -> merge([
+            'customer_id' => $this -> customerId,
+            'product_id' => $this -> productId ,
+        ]);
     }
 }

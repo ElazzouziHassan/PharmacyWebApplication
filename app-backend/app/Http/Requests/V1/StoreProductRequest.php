@@ -22,12 +22,21 @@ class StoreProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'label' => ['required', 'string'],
+            'label' => ['required', 'string', 'unique:products,label'],
             'description' => ['required', 'string'],
-            'price' => ['required', 'double'],
-            'image' => ['required','image', 'max:2048', 'mimes:jpg,png'],
-            'category_id' =>['required', 'exists:categories,id'] ,
-            'user_id' => ['required', 'exists:users,id']
+            'price' => ['required', 'numeric'],
+            'image' => ['required', 'file', 'max:2048', 'mimes:jpg,png'],
+            'categoryId' =>['required', 'exists:categories,id'] ,
+            'userId' => ['required', 'exists:users,id']
         ];
     }
+
+    protected function prepareForValidation()
+    {
+        $this -> merge([
+            'category_id' => $this->categoryId,
+            'user_id' => $this->userId,
+        ]);
+    }
+
 }

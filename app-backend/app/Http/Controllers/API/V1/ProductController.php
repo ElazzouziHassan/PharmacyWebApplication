@@ -37,6 +37,12 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
+        // Move the uploaded image to the public path with the 'label' as the file name
+        $imagePath = $request->file('image')->storeAs('images', $request['label'], 'public');
+
+        // Update the 'image' field with the stored file name
+        $request['image'] = $imagePath;
+
         return new ProductResource(Product::create($request->all()));
     }
 
