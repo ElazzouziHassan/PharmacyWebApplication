@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 declare var $: any;
 import { CommonModule } from '@angular/common';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./pages/home/home.component";
 import { NavbarComponent } from "./component/navbar/navbar.component";
 import { FooterComponent } from "./component/footer/footer.component";
@@ -17,7 +17,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [CommonModule, RouterOutlet, HomeComponent, HomeComponent, NavbarComponent, FooterComponent,
+    imports: [RouterLink, CommonModule, RouterOutlet, HomeComponent, HomeComponent, NavbarComponent, FooterComponent,
     LeftasideallcategoriesComponent,SearchallcategoriesComponent,TopHeaderComponent,LoginComponent]
 })
 export class AppComponent {
@@ -28,6 +28,20 @@ export class AppComponent {
   constructor(private route:Router){
     
   }
+ 
+  categoriesFromAPI:any=
+  [
+    {navigateTo:"/",content:"VISAGE"},
+    {navigateTo:"/",content:"CORPS"},
+    {navigateTo:"/",content:"CHEUVEUX"},
+    {navigateTo:"/",content:"BIO"},
+    {navigateTo:"/",content:"PARA-MEDICAL"},
+    {navigateTo:"/",content:"HYGIENE"},
+    {navigateTo:"/",content:"BEBE & MAMAN"},
+    {navigateTo:"/",content:"HOMME"},
+    {navigateTo:"/",content:"SOLAIRE"},
+    {navigateTo:"/",content:"SANTE"},
+  ]
 
   ngOnInit() {
     $(document).ready(function () {

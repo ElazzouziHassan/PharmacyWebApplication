@@ -16,7 +16,19 @@
 <div class="container" *ngIf="!afficherLoginComponent">
     <div class="row">
         <div class="col-lg-3 col-md-3" style="height: fit-content;">
-           <leftasideallcategories></leftasideallcategories>
+
+
+           <leftasideallcategories>
+            <ul class="dropdown-content">
+                <li *ngFor="let categorie of categoriesFromAPI">
+                    <a routerLink="{{categorie.navigateTo}}" routerLinkActive="active">
+                        {{categorie.content}}
+                    </a>
+                </li>
+            </ul>
+           </leftasideallcategories>
+
+
         </div>
         <div class="col-lg-9 col-md-9 col-12">
             <searchallcategories></searchallcategories>
