@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
 export class SignupComponent {
   user = { email:'', username: '', password1: '', password2: '' };
   onSubmit() {
-    if(this.user.email=="" || this.user.email=="" || this.user.email=="" || this.user.email=="" ){
+    if(this.user.email=="" || this.user.username=="" || this.user.password1=="" || this.user.password2=="" ){
       Swal.fire({
         icon:'warning',
         title: 'Oooops!',
