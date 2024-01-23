@@ -3,6 +3,7 @@
 namespace App\Http\Requests\V1;
 
 use App\Rules\CinValidationRule;
+use App\Rules\PhoneNumberValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreCustomerRequest extends FormRequest
@@ -24,11 +25,20 @@ class StoreCustomerRequest extends FormRequest
     {
         return [
             'cin' => ['required', new CinValidationRule] ,
-            'first_name' => ['required', 'string'] ,
-            'last_name' => ['required', 'string'] ,
+            'firstName' => ['required', 'string'] ,
+            'lastName' => ['required', 'string'] ,
             'adress' => ['required', 'string'] ,
             'email' => ['required', 'email'] ,
-            'phone_number' => ['required', 'phone']
+            'phoneNumber' => ['required', new PhoneNumberValidationRule]
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this -> merge([
+            'first_name' => $this -> firstName,
+            'last_name' => $this -> lastName ,
+            'phone_number' => $this -> phoneNumber
+        ]);
     }
 }

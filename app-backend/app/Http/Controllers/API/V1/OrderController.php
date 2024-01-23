@@ -37,6 +37,9 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
+        $request['prescription']->move(public_path('files'), $request['order_id']);
+        $request['prescription'] = $request['order_id'];
+
         return new OrderResource(Order::create($request->all()));
     }
 

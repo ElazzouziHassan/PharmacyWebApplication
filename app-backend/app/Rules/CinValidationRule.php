@@ -14,7 +14,7 @@ class CinValidationRule implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (preg_match('/^[A-Z]{2}\d{1,8}$/', strtoupper($value)) !== 1) {
+        if (preg_match('/^[A-Z]{1,2}\d{1,8}$/', strtoupper($value)) !== 1) {
             $fail('The :attribute must be a valid CIN number.');
         }
     }
