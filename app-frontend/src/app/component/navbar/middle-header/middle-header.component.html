@@ -9,9 +9,9 @@
             <nav class="header__menu" 
             style=" display: flex;align-items: center;">
                 <ul>
-                    <li ><a routerLinkActive="active" routerLink="/home">Home</a></li>
-                    <li><a routerLinkActive="active" routerLink="/shop">Shop</a></li>
-                    <li><a routerLinkActive="active" >Pages</a>
+                    <li routerLinkActive=active [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/home">Home</a></li>
+                    <li routerLinkActive="active"><a routerLink="/shop" routerLink="/shop">Shop</a></li>
+                    <li routerLinkActive="active"><a routerLink="active" >Pages</a>
                         <ul class="header__menu__dropdown">
                             <li><a routerLink="/shopdetails">Shop Details</a></li>
                             <li><a routerLink="/shopingcart">Shoping Cart</a></li>
@@ -19,8 +19,8 @@
                             <li><a routerLink="/blogdetails">Blog Details</a></li>
                         </ul>
                     </li>
-                    <li><a routerLink="/blog">Blog</a></li>
-                    <li><a routerLink="/contact-us" >Contact</a></li>
+                    <li routerLinkActive="active"><a routerLink="/blog">Blog</a></li>
+                    <li routerLinkActive="active"><a routerLink="/contact-us" >Contact</a></li>
                 </ul>
             </nav>
         </div>
