@@ -1,0 +1,44 @@
+<app-signup *ngIf="afficherSignUp"></app-signup>
+
+<div class="container-fluid " style="height: 100%;" *ngIf="!afficherSignUp">
+  <div class="row page-login border-content" style="height: 100%;">
+    <div class="col-lg-6 p-0 col-12 ">
+      <div class="d-flex align-items-center justify-content-center h-100">
+        <form class="" #myForm="ngForm" (ngSubmit)="onSubmit()">
+          <h2 class="text-center mb-4">Bienvenue !</h2>
+          <div class="form-group col-12"> <!-- Ajoutez col-12 ici -->
+            <p>Connectez-vous à votre compte</p>
+            <input type="email" name="username" [(ngModel)]="user.username"  class="form-control" id="email" placeholder="Email">
+          </div>
+          <div class="form-group my-4 col-12"> <!-- Ajoutez col-12 ici -->
+            <input type="password" name="password" [(ngModel)]="user.password" autocomplete="true" class="form-control" id="password" placeholder="Mot de passe">
+          </div>
+          <div class="d-grid gap-2 col-12">
+            <button type="submit"  class="btn btn-primary btn-block">Login</button>
+          </div>
+          <div class="my-4 col-12 text-center">
+            <p>Mot de passe oublié ?</p>
+          </div>
+          <div class="my-4 col-12 text-center">
+            <p>Vous n'avez pas encore de compte ! 
+              
+              <!-- <a routerLink="/signup" class="link-register"> -->
+                <!-- (click)="displaySignUp()" -->
+              <button class="link-register" (click)="toggleSignUp();changeUrlOnClickToSignUp();"
+              style="background-color: transparent;border: none;color: blue;">  
+                S'inscrire
+              </button>
+              <!-- </a> -->
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-6 p-0 d-none d-lg-block" style="height: 100%;">
+      <img src="/assets/login.jpg" alt="Login Image" class="img-fluid h-100" style="object-fit: cover;">
+    </div>
+  </div>
+</div>
+
+
